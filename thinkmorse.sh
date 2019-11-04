@@ -1,10 +1,13 @@
 #!/bin/bash
 
+modprobe -r ec_sys
+modprobe ec_sys write_support=1
+
 on="\x8a"
 off="\x0a"
 
 led(){
-	sudo echo -n -e $1 | dd of="/sys/kernel/debug/ec/ec0/io" bs=1 seek=12 count=1 conv=notrunc 2> /dev/null
+	echo -n -e $1 | dd of="/sys/kernel/debug/ec/ec0/io" bs=1 seek=12 count=1 conv=notrunc 2> /dev/null
 	# thx to u/vali20
 	# https://www.reddit.com/r/thinkpad/comments/7n8eyu/thinkpad_led_control_under_gnulinux/
 }
@@ -83,3 +86,5 @@ parse "$input"
 
 sleep 1
 led $on
+
+modprobe -r ec_sys
