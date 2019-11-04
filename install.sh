@@ -26,12 +26,12 @@ function thinkmorseWithoutUpdate () {
     sudo cp -i ./thinkmorse.sh /usr/bin/thinkmorse
     sudo chmod +x /usr/bin/thinkmorse
     echo -ne '#####                     (33%)\r'
-    sleep 1
+    sleep 2
     echo -ne '#############             (66%)\r'
-    sleep 1
+    sleep 2
     echo -ne '#######################   (100%)\r'
     echo -ne '\n'
-    echo -e "${RED}thinkmorse${NC} has now been installed"
+    echo -e "${RED}ThinkMorse${NC} has now been installed"
 }
 
 function thinkmorseWithUpdate () {
@@ -45,12 +45,12 @@ function thinkmorseWithUpdate () {
     sudo cp -i ./thinkmorse.sh /usr/bin/thinkmorse
     sudo chmod +x /usr/bin/thinkmorse
     echo -ne '#####                     (33%)\r'
-    sleep 1
+    sleep 2
     echo -ne '#############             (66%)\r'
-    sleep 1
+    sleep 2
     echo -ne '#######################   (100%)\r'
     echo -ne '\n'
-    echo -e "${RED}thinkmorse${NC} has now been installed"
+    echo -e "${RED}ThinkMorse${NC} has now been installed"
 }
 
 if [ $1 ]; then
