@@ -79,10 +79,16 @@ parse(){
 	done
 }
 
-led $off
-read -p "enter a word: " input
-echo "blinking \"$input\""
-parse "$input"
+if [ "$1" != "" ]; then
+	led $off
+	echo "blinking \"$1\""
+	parse "$1"
+	else 
+	led $off
+	read -p "enter a word: " input
+	echo "blinking \"$input\""
+	parse "$input"
+fi
 
 sleep 1
 led $on
